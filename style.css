@@ -1,0 +1,245 @@
+ /* Variables CSS pour les couleurs et les espacements */
+:root {
+    --primary-color: #007bff; /* Bleu principal (utilisé pour les liens, boutons, etc.) */
+    --secondary-color: #6c757d; /* Gris secondaire */
+    --light-gray: #f8f9fa; /* Gris très clair pour les fonds */
+    --border-color: #ddd; /* Gris pour les bordures */
+    --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --section-padding: 30px;
+}
+
+/* Reset CSS (pour uniformiser l'affichage entre les navigateurs) */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Police courante et lisible */
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--light-gray);
+}
+
+/* Typographie */
+h1, h2, h3 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px; /* Ajout d'un retrait pour les listes */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease; /* Transition douce pour la couleur au hover */
+}
+
+a:hover {
+    color: #0056b3; /* Bleu plus foncé au hover */
+    text-decoration: underline;
+}
+
+/* Header et Navigation */
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Barre de navigation fixe en haut */
+    top: 0;
+    z-index: 100; /* Assure que le header reste au-dessus des autres éléments */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+/* Sections (Services, Professeurs, Témoignages, Contact) */
+section {
+    padding: var(--section-padding);
+}
+
+#professeurs, #temoignages {
+    background-color: #fff; /* Fond blanc pour ces sections */
+}
+
+.section-title { /* Style commun pour les titres de section */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary-color);
+}
+
+/* Conteneurs (Services, Professeurs, Témoignages) */
+.service-container, .professeur-container, .temoignage-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Ajout d'un espacement entre les éléments */
+}
+
+/* Cartes (Services, Professeurs, Témoignages) */
+.service, .professeur, .temoignage {
+    width: calc(33% - 20px); /* Ajuste la largeur en fonction de l'espacement */
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    transition: transform 0.2s ease; /* Ajoute une transition pour un effet de hover */
+}
+
+.service:hover, .professeur:hover, .temoignage:hover {
+    transform: scale(1.05); /* Légère augmentation de taille au hover */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Images */
+.service img, .professeur img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.professeur img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.temoignage-auteur {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.temoignage-auteur img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Formulaire de contact */
+#contact {
+    text-align: center;
+}
+
+#contact form {
+    max-width: 600px; /* Limite la largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire */
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+#contact textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#contact button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-info, .footer-links, .footer-social {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+.footer-info h4, .footer-links h4, .footer-social h4 {
+    margin-bottom: 10px;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-social ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social li {
+    margin: 0 10px;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+}
+.footer-info img {
+    display: flex;
+    width: 24px;
+    height: 24px;
+}
